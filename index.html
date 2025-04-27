@@ -111,7 +111,7 @@
         }
 
         /* ল্যান্ডস্কেপ মোড টগল বাটন */
-        .landscape-toggle {
+        /* .landscape-toggle {
         background: #ff4081;
         color: #fff;
         border: none;
@@ -126,7 +126,7 @@
 
         .landscape-toggle:hover {
         background: #f50057;
-        }
+        } */
 
         /* বাটন স্টাইল */
         .mode-toggle {
@@ -157,8 +157,8 @@
         <span id="seconds">00</span>
         </div>
         <div id="ampm">AM</div>
-        <button class="mode-toggle" onclick="toggleMode()">Toggle Dark Mode</button>
-        <button class="landscape-toggle" onclick="toggleLandscapeMode()">Toggle Landscape Mode</button>
+        <!-- <button class="mode-toggle" onclick="toggleMode()">Toggle Dark Mode</button> -->
+        <!-- <button class="landscape-toggle" onclick="toggleLandscapeMode()">Toggle Landscape Mode</button> -->
     </div>
 
     <script>
@@ -229,19 +229,19 @@
         }
 
         // ল্যান্ডস্কেপ মোড সুইচ ফাংশন
-        function toggleLandscapeMode() {
-        // যদি বর্তমানে ল্যান্ডস্কেপ না থাকে, তাহলে সেটি চালু করা
-        if (window.innerHeight < window.innerWidth) {
-            document.body.style.transform = "rotate(90deg)";
-            document.body.style.transformOrigin = "top left";
-            document.body.style.width = "100vh";
-            document.body.style.height = "100vw";
-        } else {
-            document.body.style.transform = "rotate(0deg)";
-            document.body.style.width = "100%";
-            document.body.style.height = "100%";
-        }
-        }
+        // function toggleLandscapeMode() {
+        // // যদি বর্তমানে ল্যান্ডস্কেপ না থাকে, তাহলে সেটি চালু করা
+        // if (window.innerHeight < window.innerWidth) {
+        //     document.body.style.transform = "rotate(90deg)";
+        //     document.body.style.transformOrigin = "top left";
+        //     document.body.style.width = "100vh";
+        //     document.body.style.height = "100vw";
+        // } else {
+        //     document.body.style.transform = "rotate(0deg)";
+        //     document.body.style.width = "100%";
+        //     document.body.style.height = "100%";
+        // }
+        // }
     </script>
 
     <!-- Service Worker Script -->
