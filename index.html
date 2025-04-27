@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Devi Halder Clock</title>
+    <link rel="manifest" href="manifest.json">
     <style>
         body {
         height: 100vh;
@@ -63,6 +64,32 @@
 
         .title {
             font-size: 8vw;
+        }
+        }
+
+        /* ল্যান্ডস্কেপ মোডে ঘড়ি দেখানোর জন্য */
+        @media only screen and (orientation: landscape) {
+        body {
+            background: #121212;
+            color: #fff;
+        }
+
+        .clock-box {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(255,255,255,0.2);
+            padding: 50px 80px;
+        }
+
+        .title {
+            font-size: 8vw;
+        }
+
+        .clock {
+            font-size: 10vw;
+        }
+
+        #ampm {
+            font-size: 5vw;
         }
         }
 
