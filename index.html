@@ -8,11 +8,12 @@
         body {
         height: 100vh;
         margin: 0;
+        font-family: 'Orbitron', sans-serif;
         background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Orbitron', sans-serif;
         }
 
         .clock-box {
@@ -50,7 +51,7 @@
         margin-top: 15px;
         }
 
-        /* Mobile Specific Styles */
+        /* মোবাইলের জন্য responsive স্টাইল */
         @media (max-width: 450px) {
         .clock {
             font-size: 20vw;
@@ -64,6 +65,36 @@
             font-size: 8vw;
         }
         }
+
+        /* ডার্ক মোড */
+        body.dark-mode {
+        background: #121212;
+        color: #ffffff;
+        }
+
+        .clock-box.dark-mode {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(255,255,255,0.2);
+        }
+
+        /* বাটন স্টাইল */
+        .mode-toggle {
+        background: #69f0ae;
+        color: #121212;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+        }
+
+        .mode-toggle:hover {
+        background: #00e676;
+        }
+
     </style>
     </head>
     <body>
@@ -75,6 +106,7 @@
         <span id="seconds">00</span>
         </div>
         <div id="ampm">AM</div>
+        <button class="mode-toggle" onclick="toggleMode()">Toggle Dark Mode</button>
     </div>
 
     <script>
@@ -83,7 +115,6 @@
 
         // রং বদলানোর ফাংশন
         function changeColors() {
-        // র‍্যান্ডম রং নাও
         const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
         document.getElementById("name").style.color = getRandomColor();
@@ -130,6 +161,20 @@
         // রং বদলাবে প্রতি ৩ সেকেন্ডে
         setInterval(changeColors, 3000);
         changeColors();
+
+        // ডার্ক মোড সিস্টেম
+        function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector(".clock-box").classList.toggle("dark-mode");
+
+        // ডার্ক মোডে থাকলে বাটন লেখা পরিবর্তন
+        const button = document.querySelector(".mode-toggle");
+        if (document.body.classList.contains("dark-mode")) {
+            button.textContent = "Switch to Light Mode";
+        } else {
+            button.textContent = "Switch to Dark Mode";
+        }
+        }
     </script>
     </body>
     </html>
